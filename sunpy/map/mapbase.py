@@ -372,15 +372,12 @@ Dimension:\t [%d, %d]
                               [self.meta['PC2_1'], self.meta['PC2_2']]])
 
         elif self.meta.get('CD1_1', None) is not None:
-            div = 1. / (self.scale['x'] - self.scale['y'])
-
-            deltm = np.matrix([[self.scale['y']/div, 0],
-                               [0, self.scale['x']/ div]])
-
             cd = np.matrix([[self.meta['CD1_1'], self.meta['CD1_2']],
                             [self.meta['CD2_1'], self.meta['CD2_2']]])
 
-            return deltm * cd
+            cdelt = np.array(self.scale.values())
+
+            return cd / cdelt
         else:
             return self._rotation_matrix_from_crota()
 
@@ -393,7 +390,7 @@ Dimension:\t [%d, %d]
         conversion.
         """
         lam = self.scale['y'] / self.scale['x']
-        p = np.deg2rad(self.meta['CROTA2'])
+        p = np.deg2rad(self.meta.get('CROTA2', 0))
 
         return np.matrix([[np.cos(p), -1 * lam * np.sin(p)],
                           [1/lam * np.sin(p), np.cos(p)]])

@@ -407,7 +407,6 @@ def test_add_entry_from_hek_qr(database):
     database.add_from_hek_query_result(hek_res)
     assert len(database) == 2133
 
-
 @pytest.mark.online
 @pytest.mark.skipif(
         sys.version_info[:2] == (2,6),
