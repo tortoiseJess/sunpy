@@ -20,8 +20,7 @@ TODO:
 test for the same day
 test for more than one day
 test invalid input
-integrate and more testing with different dates --> pytest and git commit
-transfer result to client interface, how?
+integrate and more testing with different dates --> pytest 
 
 '''
 
@@ -84,22 +83,22 @@ def main():
 #     test_fail_get_suitable_urls_for_datetime(day,t1,t2)
     
 #===========================================================================================
-#     timerange1 = TimeRange('2013/04/12 23:01:00', '2013/04/12 23:59:13') 
-#     urls0 = 'swap_lv1_20130412_230254.fits'
-#     urlsn1 = 'swap_lv1_20130412_235454.fits'   
-#     test_get_url_for_time_range(timerange1, urls0, urlsn1) 
-#     
-#     timerange2 = TimeRange('2013/04/11 23:05:00', '2013/04/12 23:59:13')
-#     urls0 = 'swap_lv1_20130411_230623.fits'
-#     urlsn1 = 'swap_lv1_20130412_235454.fits' 
-#     test_get_url_for_time_range(timerange2, urls0, urlsn1) 
-#     
-#     timerange3 = TimeRange('2013/04/11 23:05:00', '2013/04/13 23:56:15')
-#     urls0 = 'swap_lv1_20130411_230623.fits'
-#     urlsn1 = 'swap_lv1_20130413_235607.fits' 
-#     test_get_url_for_time_range(timerange3, urls0, urlsn1) 
+    timerange1 = TimeRange('2013/04/12 23:01:00', '2013/04/12 23:59:13') 
+    urls0 = 'swap_lv1_20130412_230254.fits'
+    urlsn1 = 'swap_lv1_20130412_235454.fits'   
+    test_get_url_for_time_range(timerange1, urls0, urlsn1) 
     
-    #funny inputs
+    timerange2 = TimeRange('2013/04/11 23:05:00', '2013/04/12 23:59:13')
+    urls0 = 'swap_lv1_20130411_230623.fits'
+    urlsn1 = 'swap_lv1_20130412_235454.fits' 
+    test_get_url_for_time_range(timerange2, urls0, urlsn1) 
+    
+    timerange3 = TimeRange('2013/04/11 23:05:00', '2013/04/13 23:56:15')
+    urls0 = 'swap_lv1_20130411_230623.fits'
+    urlsn1 = 'swap_lv1_20130413_235607.fits' 
+    test_get_url_for_time_range(timerange3, urls0, urlsn1) 
+    
+    #other input formats?
     timerange4 = TimeRange('2013/04/12', '2013/04/12')
     timerange5 = TimeRange('2013/04/11', '2013/04/13')
     #unspecified time will assume 00:00:00
